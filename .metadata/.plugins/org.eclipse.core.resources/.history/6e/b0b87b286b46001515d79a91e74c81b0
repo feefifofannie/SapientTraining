@@ -1,0 +1,9 @@
+package pack1;
+
+public class Base {
+	int data;
+	
+	public Base(){
+		System.out.println("Constructor");
+	}
+}

@@ -1,0 +1,21 @@
+package exceptions;
+
+public class AddArguments {
+
+	public static void main(String[] args) {
+		int sum = 0;
+		for (String arg : args){
+			sum += Integer.parseInt(arg);
+		}
+		System.out.println("Sum = "+ sum);
+	}
+
+}
+
+/*
+ * To run in the command line with arguments:
+ * D:
+ * cd /SapientTraining/ExceptionHandling
+ * java -cp bin exceptions.AddArguments 1 2 3 4
+ * add any arguments you want to the end
+ */

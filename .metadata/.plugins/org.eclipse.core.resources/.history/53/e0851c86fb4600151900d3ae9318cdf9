@@ -1,0 +1,38 @@
+/**
+ * 
+ */
+package referencearray;
+
+/**
+ * @author dredmo
+ *
+ */
+public class MainApp {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println(createArray());
+
+	}
+	
+	public static Point[] createArray(){
+		Point[] p = new Point[10];
+		for (int count=0; count<10; count++){
+			p[count] = new Point(count, count+1);
+		}
+		return p;
+	}
+
+}
+
+class Point{
+	int x, y;
+	
+	public Point(int one, int two){
+		x = one;
+		y = two;
+	}
+	
+}

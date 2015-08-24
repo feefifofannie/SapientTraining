@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+/**
+ * @author dredmo
+ *
+ */
+public class Math {
+	
+	/**
+	 * This method calculates the sum of two integers.
+	 * @param num1 THis parameter is the first number
+	 * @param num2
+	 * @return
+	 */
+	public int sum(int num1, int num2){
+		return num1+num2;
+	}
+}

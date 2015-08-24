@@ -1,0 +1,22 @@
+/**
+ * 
+ */
+package staticexample;
+
+import static javax.swing.JOptionPane.*;
+
+/**
+ * @author dredmo
+ *
+ */
+public class StaticImport {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		showMessageDialog(null, "Hello Sapient", "tile", INFORMATION_MESSAGE);
+
+	}
+
+}
