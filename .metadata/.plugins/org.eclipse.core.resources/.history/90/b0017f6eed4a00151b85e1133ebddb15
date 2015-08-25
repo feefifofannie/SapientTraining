@@ -1,0 +1,26 @@
+package com.sapient.objectclass;
+
+public class ObjectClass {
+	public static void main(String[] args){
+		Data d1 = new Data();
+		Data d2 = new Data();
+		
+		d1.setNum(6);
+		d2.setNum(6);
+		
+		System.out.println(d1==d2);  		//false
+		System.out.println(d1.equals(d2));  //false
+	}
+}
+
+class Data {
+	private int num;
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
+	}
+}

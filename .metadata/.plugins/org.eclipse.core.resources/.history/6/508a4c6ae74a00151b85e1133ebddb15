@@ -1,0 +1,37 @@
+package com.sapient.wrappers;
+
+public class Wrappers {
+
+	public static void main(String[] args) {
+		Wrappers w = new Wrappers();
+		w.manualBoxing();
+		w.autoBoxing();
+	}
+	
+	/*
+	 * Integer is wrapper class for int
+	 */
+	public void manualBoxing(){
+		int pInt = 420;
+		Integer wInt = new Integer(pInt);  //boxing
+		int p2 = wInt.intValue();   	   //unboxing
+		
+		//examples
+		String str = "Hello";
+		int x = Integer.valueOf(str).intValue();
+		x = Integer.parseInt(str);
+		System.out.println(x);
+		
+	}
+	
+	/*
+	 * Recommended not to use autoboxing as there is performance loss
+	 * Okay to use indirectly (in Collections)
+	 */
+	public void autoBoxing(){
+		int pInt = 420;
+		Integer wInt = pInt;		//autoboxing
+		int p2 = wInt;				//auto-unboxing
+	}
+
+}

@@ -1,0 +1,68 @@
+package com.sapient.objectclass;
+
+public class ObjectClass {
+	public static void main(String[] args){
+		Data d1 = new Data();
+		Data d2 = new Data();
+		Number n = new Number(6);
+		Object o = new Object();
+		
+		d1.setNumOne(6);
+		d1.setNumTwo(6);
+		d2.setNumOne(6);
+		d2.setNumTwo(3);
+		
+		System.out.println(d1==d2);  		//false
+		System.out.println(d1.equals(n));  //true
+		System.out.println(d1.equals(o));   //false
+	}
+}
+
+class Number extends Data{
+	int v;
+	public Number (int value){
+		v = value;
+	}
+	
+	public int getNumOne(){
+		return v;
+	}
+	public int getNumTwo(){
+		return v;
+	}
+	
+	public void setValue(int v){
+		this.v = v;
+	}
+}
+
+class Data {
+	private int numOne;
+	private int numTwo;
+
+	public int getNumOne() {
+		return numOne;
+	}
+
+	public void setNumOne(int numOne) {
+		this.numOne = numOne;
+	}
+
+	public int getNumTwo() {
+		return numTwo;
+	}
+
+	public void setNumTwo(int numTwo) {
+		this.numTwo = numTwo;
+	}
+	
+	public boolean equals(Object o){
+		Data temp = (Data)o;
+		if (temp.getNumOne() == numOne){
+			if (temp.getNumTwo() == numTwo){
+				return true;
+			}
+		} 
+		return false;
+	}
+}

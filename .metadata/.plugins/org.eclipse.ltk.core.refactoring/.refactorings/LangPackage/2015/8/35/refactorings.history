@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.sapient.practice&apos; to &apos;com.sapient.toString&apos;&#x0D;&#x0A;- Original project: &apos;LangPackage&apos;&#x0D;&#x0A;- Original element: &apos;LangPackage/src/com.sapient.practice&apos;&#x0D;&#x0A;- Renamed element: &apos;LangPackage/src/com.sapient.toString&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.sapient.practice&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.sapient.practice" name="com.sapient.toString" qualified="false" references="true" stamp="1440485474408" textual="false" version="1.0"/>
+</session>
