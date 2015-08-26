@@ -1,0 +1,68 @@
+package com.sapient.keyvalue;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+
+public class KeyValues {
+
+	public static void main(String[] args) {
+		HashMap<Integer, Data> result = new HashMap<Integer, Data>();
+
+
+		result.put(3, new Data(2));
+		result.put(4, new Data(3));
+		result.put(5, new Data(6));
+		result.put(6, new Data(4));
+		result.put(4, new Data(4));
+
+		Set<Integer> keys = result.keySet();
+
+		Iterator<Integer> itr = keys.iterator();
+		int name = 0;
+		while(itr.hasNext()) {
+			name = itr.next();
+			System.out.println(name + " " + result.get(name));
+		}
+
+	}
+
+}
+
+class Data {
+	int value;
+
+	public Data(int v) {
+		value = v;
+	}
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	public String toString() {
+		return String.valueOf(value);
+	}
+	
+	public boolean equals(Object o){
+		if (o != null && o instanceof Data){
+			Data temp = (Data)o;
+			if (temp.getValue() == value){
+					return true;
+			} 
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+}
