@@ -3,7 +3,7 @@ package com.sapient.treeset;
 import java.util.Comparator;
 import java.util.TreeSet;
 
-class Compare implements Comparator<String> {  
+class Compare {  
 	  public int compare(String a, String b) {  
 	    String aStr, bStr;  
 	  
@@ -19,7 +19,7 @@ class Compare implements Comparator<String> {
 	class TreeSetCompare {  
 	  public static void main(String args[]) {  
 	    // Create a tree set. 
-	    TreeSet<String> ts = new TreeSet<String>(new Compare());  
+	    TreeSet<String> ts = new TreeSet<String>();  
 	      
 	    // Add elements to the tree set. 
 	    ts.add("C");  

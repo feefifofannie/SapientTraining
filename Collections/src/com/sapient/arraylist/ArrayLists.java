@@ -3,11 +3,13 @@ package com.sapient.arraylist;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+import java.util.Iterator;
+
 public class ArrayLists {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		oldStyle();
 	}
 	
 	public void arrayListDemo() {
@@ -64,6 +66,46 @@ public class ArrayLists {
 	    System.out.println("Sum is: " + sum);  
 	}
 	
+	public static void arrayIterator() {
+	    ArrayList<String> list = new ArrayList<String>(); 
+	 
+	    list.add("one"); 
+	    list.add("two"); 
+	    list.add("three"); 
+	    list.add("four"); 
+	 
+	    // Notice that Iterator is also generic. 
+	    Iterator<String> itr = list.iterator(); 
+	 
+	    while(itr.hasNext()) { 
+	      String str =(String) itr.next(); 
+	 
+	      System.out.println(str + " is " + str.length() + " chars long."); 
+	    }
+	}
 	
+	public static void oldStyle() {
+		ArrayList<Object> list = new ArrayList<Object>(); 
+
+		// These lines store strings, but any type of object 
+		// can be stored.  In old-style code, there is no  
+		// convenient way restrict the type of objects stored 
+		// in a collection 
+		list.add("one"); 
+		list.add("two"); 
+		list.add(3); 
+		list.add("four"); 
+
+		Iterator<Object> itr = list.iterator(); 
+		while(itr.hasNext()) { 
+
+			// To retrieve an element, an explicit type cast is needed 
+			// because the collection stores only Object. 
+			String str = itr.next().toString(); // explicit cast needed here. 
+
+
+			System.out.println(str + " is " + str.length() + " chars long."); 
+		}
+	}
 
 }

@@ -11,8 +11,16 @@ public class Serialization {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		writeAddress();
+		readAddress();
+	}
+	
+	/*
+	 * serializes the object
+	 */
+	public static void writeSerializedObject() {
 		try {
-			Sample object1 = new Sample("Hi", -7, 2.7);
+			SerializedObject object1 = new SerializedObject("Hi", -7, 2.7);
 			System.out.println("object1: " + object1);
 			FileOutputStream fos = new FileOutputStream("store");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -24,36 +32,56 @@ public class Serialization {
 			System.out.println("Exception : " + e);
 			System.exit(0);
 		}
-		
+	}
+	
+	/*
+	 * de-serializes the object
+	 */
+	public static void readSerializedObject() {
 		try{
-			Sample object2;
+			SerializedObject object2;
 			FileInputStream fis = new FileInputStream("store");
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			object2 = (Sample)ois.readObject();
-			ois.close();System.out.println("object2: " + object2);
+			object2 = (SerializedObject)ois.readObject();
+			ois.close();
+			System.out.println("object2: " + object2);
 		}
 		catch(Exception e){
 			System.out.println("Exception : " + e);
 			System.exit(0);
 		}
 	}
-
-}
-
-/*
- * serialization - saving the state of an object onto a file
- * Any object that you want to serialize must implement serializable
- */
-class Sample implements Serializable{
-	String s;
-	int i;
-	double d;
-	public Sample(String s, int i, double d) {
-		this.s = s;
-		this.i = i;
-		this.d = d;
+	
+	
+	public static void writeAddress() {
+		Address address = new Address();
+		address.setCountry("india");
+		address.setStreet("Park Street");
+		
+		try {
+			FileOutputStream fout = new FileOutputStream("D:\\address.ser");
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(address);
+			oos.close();
+			System.out.println("Done");
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	public String toString() {
-		return "s= " + s  + "; i= " + i + "; d= " + d;
+	
+	public static void readAddress() {
+		
+		try {
+			FileInputStream fout = new FileInputStream("D:\\address.ser");
+			ObjectInputStream oos = new ObjectInputStream(fout);
+			System.out.println(oos.readObject());
+			oos.close();
+			System.out.println("Done");
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
+
 }
